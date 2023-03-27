@@ -2,6 +2,7 @@ import { createVariable } from '@/lib/api/createVariable';
 import { recommendedVariableResultAtom } from '@/recoil/atom';
 import React, { FormEvent, useRef, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
+import QuestionFormWrapper from './styled';
 
 export default function QuestionForm() {
   const questionRef = useRef<HTMLInputElement>(null);
@@ -14,9 +15,9 @@ export default function QuestionForm() {
     if (!question) return alert('추천 받고싶은 변수명을 입력해주세요!');
 
     createVariable(question).then((data) => {
-      const contentResult = data.choices[0].message.content;
+      console.log(data);
       const filteringResult = Array.from(
-        contentResult.matchAll('\\[(.*?)\\]'),
+        data.result.matchAll('\\[(.*?)\\]'),
         (match: string) => `${match[0].replace(/[\[\]']+/g, '')}`
       );
 
@@ -28,16 +29,17 @@ export default function QuestionForm() {
   };
 
   return (
-    <div>
+    <QuestionFormWrapper>
       <form onSubmit={onSubmitHandler}>
         <input
           type="text"
           value={question}
           ref={questionRef}
           onChange={(e) => setQuestion(e.target.value)}
+          maxLength={12}
         />
         <button>추천받기</button>
       </form>
-    </div>
+    </QuestionFormWrapper>
   );
 }

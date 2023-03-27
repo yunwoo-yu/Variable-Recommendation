@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta title='' />
+        <meta title="" />
       </Head>
-      <div>
+      <main>
         <QuestionForm />
         <FeaturedList />
-      </div>
+      </main>
     </>
   );
 }
