@@ -51,6 +51,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       return;
     } catch (err) {
       res.status(422).json({ error: err });
+      return;
     }
   }
 }
