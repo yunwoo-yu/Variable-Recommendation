@@ -3,14 +3,16 @@ import { recommendedVariableResultAtom } from '../../recoil/atom';
 import FeaturedListWrapper from './styled';
 import FeaturedItem from '../FeaturedItem/FeaturedItem';
 
-export default function FeaturedList() {
+export default function FeaturedList({ isLoading }: { isLoading: boolean }) {
   const recommendedVariableResult = useRecoilValue(recommendedVariableResultAtom);
 
   return (
     <FeaturedListWrapper>
-      {recommendedVariableResult.result.map((item, idx) => (
-        <FeaturedItem key={item + idx} item={item} />
-      ))}
+      {!isLoading &&
+        recommendedVariableResult.result.map((item, idx) => (
+          <FeaturedItem key={item + idx} item={item} />
+        ))}
+      {isLoading && <p>Loading...</p>}
     </FeaturedListWrapper>
   );
 }
