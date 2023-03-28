@@ -39,14 +39,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           },
           {
             role: 'user',
-            content: `Please suggest three variable names in square brackets that convey the meaning of ${message}`,
+            content: `Please suggest three variable names in square brackets in English that convey the meaning of ${message}.`,
           },
         ],
       });
 
       const text = completion.data.choices[0].message?.content;
 
-      res.status(200).json({ result: text });
+      res.status(200).json({ result: text, id: v4() });
 
       return;
     } catch (err) {
