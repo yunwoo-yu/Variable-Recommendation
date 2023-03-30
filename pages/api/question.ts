@@ -21,8 +21,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { message } = req.body;
 
-    console.log(message);
-
     if (!message.trim() || message.trim().length > 12) {
       res.status(422).json({ message: '입력값을 확인해주세요.' });
       return;

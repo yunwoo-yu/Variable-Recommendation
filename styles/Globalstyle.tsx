@@ -6,11 +6,7 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
   body{
     width: 100%;
-    height: 100vh;
-  }
 
-  #__next{
-    height: 100%;
   }
 
   *{
@@ -28,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
   >h1{
     font-size: 38px;
-    margin-bottom: 3rem;
+    margin: 3rem;
   }
 }
 
