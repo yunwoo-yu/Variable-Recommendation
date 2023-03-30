@@ -1,4 +1,5 @@
 import FeaturedList from '@/components/FeaturedList/FeaturedList';
+import Footer from '@/components/Footer/Footer';
 import QuestionForm from '@/components/QuestionForm/QuestionForm';
 import Head from 'next/head';
 import { ToastContainer } from 'react-toastify';
@@ -13,6 +14,7 @@ export default function Home() {
         <h1>변수명을 부탁해</h1>
         <QuestionForm />
       </main>
+      <Footer />
       <ToastContainer
         position="top-center"
         theme="light"
