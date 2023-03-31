@@ -1,9 +1,18 @@
-import { createVariable } from '@/lib/api/createVariable';
+import { instance } from '@/lib/axios/baseInstance';
 import { questionValueAtom, recommendedVariableResultAtom } from '@/recoil/atom';
 import { FormEvent, useRef } from 'react';
 import { useMutation } from 'react-query';
 import { toast } from 'react-toastify';
 import { useRecoilState, useSetRecoilState } from 'recoil';
+
+// 변수명 추천 요청
+export const createVariable = async (message: string) => {
+  const response = await instance.post('/api/question', {
+    message,
+  });
+
+  return response.data;
+};
 
 export const useCreateVariableMutation = () => {
   const questionRef = useRef<HTMLInputElement>(null);
