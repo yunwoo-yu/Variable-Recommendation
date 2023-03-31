@@ -10,18 +10,7 @@ export default function Home() {
       <Head>
         <title>변수명을 부탁해</title>
       </Head>
-      <main>
-        <h1>변수명을 부탁해</h1>
-        <QuestionForm />
-      </main>
-      <Footer />
-      <ToastContainer
-        position="top-center"
-        theme="light"
-        autoClose={1500}
-        pauseOnFocusLoss={false}
-        limit={1}
-      />
+      <QuestionForm />
     </>
   );
 }
