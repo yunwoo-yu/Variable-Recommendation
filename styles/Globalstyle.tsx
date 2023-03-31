@@ -13,20 +13,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 800px;
-  height: 100%;
-  margin: 0 auto;
-
-  >h1{
-    font-size: 38px;
-    margin: 3rem;
+  a{
+    text-decoration: none;
   }
-}
 
 
 `;
