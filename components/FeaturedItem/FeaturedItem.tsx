@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Button from '../common/Button';
-import FeaturedItemWrapper from './styled';
+
 import CopyIcon from '../../lib/assets/copy-icon.png';
 import SuccessIcon from '../../lib/assets/check-mark-icon.png';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
+import styled from 'styled-components';
 
 interface Props {
   item: string;
@@ -21,7 +22,7 @@ export default function FeaturedItem(props: Props) {
   };
 
   return (
-    <FeaturedItemWrapper>
+    <Container>
       <span>const</span> {item}
       <Button onClick={() => copyTextHandler(item)}>
         <Image
@@ -31,6 +32,37 @@ export default function FeaturedItem(props: Props) {
           height={24}
         />
       </Button>
-    </FeaturedItemWrapper>
+    </Container>
   );
 }
+
+const Container = styled.li`
+  padding: 16px;
+  font-size: 24px;
+  background-color: #575356;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: #4fc2ff;
+  display: flex;
+  align-items: center;
+
+  > span {
+    color: #569cd6;
+    margin-right: 4px;
+  }
+
+  button {
+    margin-left: auto;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      filter: invert(100%) sepia(35%) saturate(1180%) hue-rotate(186deg) brightness(107%)
+        contrast(107%);
+    }
+  }
+`;
