@@ -37,7 +37,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           },
           {
             role: 'user',
-            content: `Suggest 3 variable names in square brackets that convey the meaning of ${message} to camel case.`,
+            content: `Suggest three variable names in square brackets conveying the meaning of ${message} in camel case in English.`,
           },
         ],
       });
