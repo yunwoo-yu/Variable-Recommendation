@@ -1,19 +1,24 @@
+import useModal from '@/hooks/useModal';
 import { ReactNode } from 'react';
 import { ToastContainer } from 'react-toastify';
 import styled from 'styled-components';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import Footer from './Footer';
+import Header from './Header';
+import Modal from './Modal';
 
 interface Props {
   children: ReactNode;
 }
 
 export default function Layout({ children }: Props) {
+  const { isShowModal } = useModal();
+
   return (
     <>
       <Header />
       <Container>{children}</Container>
       <Footer />
+      {isShowModal && <Modal />}
       <ToastContainer
         position="top-center"
         theme="light"
@@ -27,5 +32,5 @@ export default function Layout({ children }: Props) {
 
 const Container = styled.main`
   max-width: 800px;
-  margin: 42px auto;
+  margin: 0 auto;
 `;
