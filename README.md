@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Variable-Recommendation
 
-## Getting Started
+---
 
-First, run the development server:
+openAI의 gpt-3.5-burbo API를 활용해 입력한 텍스트에 대한 변수이름을 추천해주는 서비스입니다.
+(서비스에 대한 피드백, 코드에 대한 피드백 모두 환영입니다!! 😄)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### ❗️필독사항
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 해당 API는 무료가 아닙니다. 무료지급 크레딧이 끝나면 서비스가 **중지**될 수 있습니다. (주니어로 취업하면 서비스를 사비로 이어나갈 예정입니다. ~~저를 채용하세요🥹~~)
+- 악용될 우려가 있기에 너무 긴 문장이 요구되는 경우 요청이 실패할 수 있습니다. (입력제한 12자)
+- 아직 미완성의 프로젝트 입니다 😅
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 💁🏻‍♂️ 서비스 이용방법
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![testingVideo](https://user-images.githubusercontent.com/100748721/229309435-2114d754-1b72-4144-90fa-e29f8c15d29d.gif)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. [Demo](https://variable-recommendation.vercel.app/)에 접속해 데모버전을 사용 해 보실 수 있습니다.
+2. 궁금한 변수명에 대한 정보를 입력하고 기다리시면 3가지의 변수명을 추천해줍니다! wow
+3. 원하시는 변수명을 복사하여 사용하시면 됩니다 😎
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### 🛠️ 추가 작업 필요사항
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Firebase 추가하여 빅데이터 구축해보기, 입력된 텍스트에 대해 이전 개발자들이 복사한 변수명 정보 보여주기 기능 (뭘 골랐는지, 몇명이 선택했는지)
+- 데이터가 쌓이게 되면, Firebase DB 내부 데이터 검색기능
