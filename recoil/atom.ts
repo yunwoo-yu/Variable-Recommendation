@@ -13,6 +13,11 @@ export const recommendedVariableResultAtom = atom<RecommendedVariableResult>({
   },
 });
 
+export const isShowModalAtom = atom({
+  key: 'isModal',
+  default: false,
+});
+
 export const questionValueAtom = atom<string>({
   key: 'question',
   default: '',
