@@ -1,15 +1,18 @@
-## Variable-Recommendation
+<div align="center">
+<h2>Variable-Recommendation ⭐️</h2>
 
----
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fyunwoo-yu%2FVariable-Recommendation&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-openAI의 gpt-3.5-burbo API를 활용해 입력한 텍스트에 대한 변수이름을 추천해주는 서비스입니다.
+<p>openAI의 gpt-3.5-burbo API를 활용해 입력한 텍스트에 대한 변수이름을 추천해주는 서비스입니다.</p>
 (서비스에 대한 피드백, 코드에 대한 피드백 모두 환영입니다!! 😄)
+
+</div>
 
 ### ❗️필독사항
 
 - 해당 API는 무료가 아닙니다. 무료지급 크레딧이 끝나면 서비스가 **중지**될 수 있습니다. (주니어로 취업하면 서비스를 사비로 이어나갈 예정입니다. ~~저를 채용하세요🥹~~)
 - 악용될 우려가 있기에 너무 긴 문장이 요구되는 경우 요청이 실패할 수 있습니다. (입력제한 12자)
-- 아직 미완성의 프로젝트 입니다 😅
+- 아직 미완성의 프로젝트로 MVP 단계입니다. 😅
 
 ---
 
