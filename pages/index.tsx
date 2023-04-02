@@ -1,19 +1,15 @@
 import QuestionForm from '@/components/QuestionForm/QuestionForm';
-import Head from 'next/head';
 import useModal from '@/hooks/useModal';
 import Button from '@/components/common/Button';
 import styled from 'styled-components';
 import Image from 'next/image';
-import WarningIcon from '../lib/assets/warning-icon.svg';
+import WarningIcon from '/public/images/warning-icon.svg';
 
 export default function Home() {
   const { onClickIsToggleModal } = useModal();
 
   return (
     <Container>
-      <Head>
-        <title>변수명을 부탁해</title>
-      </Head>
       <Button onClick={onClickIsToggleModal}>
         <Image src={WarningIcon} alt="필독사항 버튼" />
         사용 전 읽어주세요
@@ -24,7 +20,7 @@ export default function Home() {
 }
 
 const Container = styled.section`
-  margin: 42px 0;
+  margin: 50px 0;
 
   > button {
     display: flex;

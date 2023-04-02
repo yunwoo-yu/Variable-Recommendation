@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import Button from '../common/Button';
-
-import CopyIcon from '../../lib/assets/copy-icon.png';
-import SuccessIcon from '../../lib/assets/check-mark-icon.png';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
@@ -26,7 +23,7 @@ export default function FeaturedItem(props: Props) {
       <span>const</span> {item}
       <Button onClick={() => copyTextHandler(item)}>
         <Image
-          src={iscopySuccess ? SuccessIcon : CopyIcon}
+          src={`/images/${iscopySuccess ? 'check-mark-icon.png' : 'copy-icon.png'}`}
           alt="복사 버튼"
           width={24}
           height={24}

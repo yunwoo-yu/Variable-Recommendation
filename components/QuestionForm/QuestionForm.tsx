@@ -1,6 +1,5 @@
 import { useCreateVariableMutation } from '@/hooks/useCreateVariableMutation';
 import styled from 'styled-components';
-
 import Button from '../common/Button';
 import FeaturedList from '../FeaturedList/FeaturedList';
 
