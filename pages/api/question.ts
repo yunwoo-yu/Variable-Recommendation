@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
-import { v4 } from 'uuid';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -44,7 +43,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       const text = completion.data.choices[0].message?.content;
 
-      res.status(200).json({ result: text, id: v4() });
+      res.status(200).json({ result: text });
 
       return;
     } catch (err) {
