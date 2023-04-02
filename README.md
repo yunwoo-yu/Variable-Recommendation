@@ -6,7 +6,7 @@
 <p>openAI의 gpt-3.5-burbo API를 활용해 입력한 텍스트에 대한 변수이름을 추천해주는 서비스입니다.</p>
 (서비스에 대한 피드백, 코드에 대한 피드백 모두 환영입니다!! 😄)
 
-<a href='https://variable-recommendation.vercel.app/' target="_blank">서비스 이용해보기</a>
+<a href="https://variable-recommendation.vercel.app/" target="_blank">서비스 이용해보기</a>
 
 </div>
 
