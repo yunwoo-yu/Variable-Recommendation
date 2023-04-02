@@ -5,9 +5,7 @@ import Button from './Button';
 import CloseIcon from '/public/images/close-icon.svg';
 
 export default function Modal() {
-  const { onClickIsToggleModal, isAnimation, isShowModal } = useModal();
-
-  console.log(isAnimation, isShowModal);
+  const { onClickIsToggleModal, isAnimation } = useModal();
 
   return (
     <Container className={isAnimation ? 'active' : ''}>
