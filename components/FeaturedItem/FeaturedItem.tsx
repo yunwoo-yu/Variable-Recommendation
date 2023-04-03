@@ -3,6 +3,7 @@ import Button from '../common/Button';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
+import useVariables from '@/hooks/useVariables';
 
 interface Props {
   item: string;
@@ -11,17 +12,20 @@ interface Props {
 export default function FeaturedItem(props: Props) {
   const [iscopySuccess, setIsCopySuccess] = useState(false);
   const { item } = props;
+  const { addDoc } = useVariables({ selectVariable: item });
 
-  const copyTextHandler = (text: string) => {
-    navigator.clipboard.writeText(`const ${text}`);
+  const copyTextHandler = () => {
+    navigator.clipboard.writeText(`const ${item}`);
     setIsCopySuccess(true);
     toast.success('클립보드에 복사 되었습니다.');
+
+    addDoc();
   };
 
   return (
     <Container>
       <span>const</span> {item}
-      <Button onClick={() => copyTextHandler(item)}>
+      <Button onClick={copyTextHandler}>
         <Image
           src={`/images/${iscopySuccess ? 'check-mark-icon.png' : 'copy-icon.png'}`}
           alt="복사 버튼"
