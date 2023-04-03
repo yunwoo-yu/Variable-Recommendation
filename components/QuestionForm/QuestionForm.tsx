@@ -1,11 +1,13 @@
 import { useCreateVariableMutation } from '@/hooks/useCreateVariableMutation';
+import { questionValueAtom } from '@/recoil/atom';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import Button from '../common/Button';
 import FeaturedList from '../FeaturedList/FeaturedList';
 
 export default function QuestionForm() {
-  const { setQuestion, onSubmitHandler, question, questionRef, isLoading } =
-    useCreateVariableMutation();
+  const question = useRecoilValue(questionValueAtom);
+  const { onSubmitHandler, onChangeHandler, questionRef, isLoading } = useCreateVariableMutation();
 
   return (
     <>
@@ -14,7 +16,7 @@ export default function QuestionForm() {
           type="text"
           value={question}
           ref={questionRef}
-          onChange={(e) => setQuestion(e.target.value)}
+          onChange={onChangeHandler}
           maxLength={12}
           placeholder="찾고싶은 변수명을 입력하세요! ex) 개인정보, 상품 등"
         />
