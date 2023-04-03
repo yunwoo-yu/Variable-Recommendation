@@ -31,6 +31,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image:height" content={metaData.height} />
         <meta property="og:site_name" content={metaData.title} />
         <meta property="og:locale" content="ko_KR" />
+        <meta
+          name="google-site-verification"
+          content="KFtgGC_BCD7osA7pSUH0OqT5LReFtrUOUhNNn_CvF7U"
+        />
         <title>변수명을 부탁해</title>
       </Head>
       <QueryClientProvider client={queryClient}>
