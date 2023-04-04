@@ -13,6 +13,7 @@ const metaData = {
   image: '/images/thumbnail.png',
   width: '1200',
   height: '630',
+  keyword: '변수, 개발자, 변수명, 추천, 생성',
 };
 
 const queryClient = new QueryClient();
@@ -21,6 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <title>변수명을 부탁해</title>
+        <meta name="description" content={metaData.description} />
+        <meta name="keywords" content={metaData.keyword} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://variable-recommendation.vercel.app/" />
         <meta property="og:title" content={metaData.title} />
@@ -36,7 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
           content="KFtgGC_BCD7osA7pSUH0OqT5LReFtrUOUhNNn_CvF7U"
         />
         <meta name="naver-site-verification" content="4d356cf99752ec8d5c3ce92e9f11945bdcb7d1e9" />
-        <title>변수명을 부탁해</title>
       </Head>
       <QueryClientProvider client={queryClient}>
         <RecoilRoot>
