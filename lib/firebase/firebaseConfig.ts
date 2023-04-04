@@ -19,6 +19,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const analytics = app.name && typeof window !== 'undefined' ? getAnalytics(app) : null;
 export const db = getDatabase(app);
