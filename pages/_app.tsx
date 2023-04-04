@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Layout from '@/components/common/Layout';
 import Head from 'next/head';
+import Script from 'next/script';
+import * as gtag from '../lib/gtag/gtag';
 
 const metaData = {
   title: '변수명을 부탁해 - 변수명 추천 사이트',
@@ -40,7 +42,24 @@ export default function App({ Component, pageProps }: AppProps) {
           content="KFtgGC_BCD7osA7pSUH0OqT5LReFtrUOUhNNn_CvF7U"
         />
         <meta name="naver-site-verification" content="4d356cf99752ec8d5c3ce92e9f11945bdcb7d1e9" />
+        {/* <!-- Google tag (gtag.js) --> */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gtag.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </Head>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+      />
       <QueryClientProvider client={queryClient}>
         <RecoilRoot>
           <Layout>
