@@ -35,6 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="google-site-verification"
           content="KFtgGC_BCD7osA7pSUH0OqT5LReFtrUOUhNNn_CvF7U"
         />
+        <meta name="naver-site-verification" content="4d356cf99752ec8d5c3ce92e9f11945bdcb7d1e9" />
         <title>변수명을 부탁해</title>
       </Head>
       <QueryClientProvider client={queryClient}>
